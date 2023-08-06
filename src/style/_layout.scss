@@ -1,0 +1,105 @@
+@import "./_utils";
+
+//Header
+.header {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    display: flex; flex-direction: column;
+    text-align: center;
+    &__top {
+        display: flex;
+        align-items: center;
+        color: black;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        @media screen and (min-width: 768px) {
+            justify-content: center;
+            padding-bottom: 5px;
+        }
+    }
+    &__icon {
+        padding: 5px 40px 0 15px; 
+        color: black;
+        font-size: 20px;
+        &:hover {
+            color: $color1;
+            font-size: 24px;
+        }
+    }
+    &__logo {
+        width: 200px;
+        padding-top: 10px;
+        @media screen and (min-width: 768px) {width: 20%;}
+    }
+    &__img {
+        width: 100%;
+        height : 300px;
+        object-fit: cover;
+        z-index: -1;
+        @media screen and (min-width: 768px) {height: 200px;}
+    }
+}
+
+
+//FOOTER
+.footer {
+    width: 100%;
+    background-color: #383636;
+    padding: 25px 0px 40px 30px;
+    color: white;
+    @media screen and (min-width: 768px) {padding: 10px 0px 8px 30px;}
+    &__logo {
+    font-size: 20px;
+    font-family: "Shrikhand";
+    margin-top: 0; margin-bottom: 10px;
+    @media screen and (min-width: 768px) {
+        width: 90%;
+        margin-left: auto; margin-right: auto;
+        margin-bottom: 0;
+        }
+    }
+    &__list {
+        line-height: 1.65;
+        @media screen and (min-width: 768px) {
+            display: flex;
+            width: 90%;
+            margin-left: auto; margin-right: auto;
+            margin-top: 4px;
+        }
+    }
+    &__icon {margin-right: 10px;}
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    
+}
+
+ul span, ul a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    @media screen and (min-width: 768px) {
+        margin-right: 75px;
+        font-size: 18px;}
+}
+
+//LOADER
+.loadingpage{
+    width: 100vw;
+    margin-left: auto; margin-right: auto;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    animation: loading 2s both;
+    &__spinner {
+        color: $color1;
+        animation: rotation_spinner 2s;
+    }
+}

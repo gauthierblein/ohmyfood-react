@@ -1,0 +1,168 @@
+@import "./_utils";
+
+/* BLOCS & ELEMENTS */
+
+.menu {
+    background-color:   #f6f6f6;
+    width: 100%;
+    border-radius: 30px 30px 0 0;
+    display: flex; flex-direction: column;
+    margin-top: -50px;
+    position: relative;
+    z-index: 3;
+    @media screen and (min-width: 768px) {
+        width: 90%;
+        margin-left: auto; margin-right: auto;
+        padding: 2%;
+        margin-top: -60px;
+    }
+    &__head {
+    display: flex;
+    justify-content: space-between; align-items: top;
+    padding: 20px 25px 0 20px ;
+    font-size: 12px;
+    margin-bottom: 10px;
+    @media screen and (min-width: 768px) {
+        padding: 5px 25px 0 20px;
+        align-items: center;
+    
+    }
+    }
+    &__head-title {
+        text-transform: uppercase;
+        font-size: 22px;
+        color: $color1;
+        @media screen and (min-width: 768px) {font-size: 26px;}
+    }
+    &__head-icon {
+        display: flex;
+        position: relative;
+        &:active {
+            .heart1 {opacity: 0;}
+            .heart2 {animation: heart_select 0.6s both;}
+        }
+        @media screen and (min-width: 768px) {
+            &:hover {
+                .heart1 {opacity:0;}
+                .heart2 {animation: heart_select 0.6s both;}
+            }
+        }
+    }
+}
+
+
+.submenu {
+    @include display_submenu;
+    @media screen and (min-width: 768px) {margin-bottom: 6px;}
+    &__head {
+        @include meals_head;
+        @media screen and (min-width: 768px) {margin-bottom: 6px;}
+    }
+    &__list {
+        @include display_meals_list;
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+    }
+}
+
+.submenu1{animation: gradual_appearance 0.5s 0.2s both;}
+.submenu2{animation: gradual_appearance 0.5s 0.4s both;}
+.submenu3{animation: gradual_appearance 0.5s 0.6s both;}
+
+.meal {
+    @include display_meals;
+    @media screen and (min-width: 768px) {
+        width: 30%;
+        padding: 8px;
+    }
+    &__title {
+        @include meals-title;
+        @media screen and (min-width: 768px) {
+            width: auto;
+            margin:0;
+        }
+    }
+    &__title h3 {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    &__details {
+        @include meals-details;
+    }
+    &__description {
+        width: 85%;
+        white-space: nowrap;
+    }
+    &__description p {
+        margin: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    &__price {
+        transition: transform 0.5s ease-in-out;
+    }
+    &__price h5 {
+        margin: 0;
+    }
+    &__select {
+        background-color: $color3;
+        display: flex;
+        justify-content: center; align-items: center;
+        width: 20%; height: 100%;
+        color: white;
+        font-size: 22px;
+        position: absolute; left: 100%; bottom: 0;
+        z-index: 4;
+        border-radius: 0 10px 10px 0;
+        transition: transform 0.5s ease-in-out;
+    }
+}
+.check {transition: transform 0.5s ease-in-out;}
+
+.meal {
+    &:hover {
+        .meal__select {transform: translateX(-100%);}
+        .meal__price {transform: translateX(-350%);}
+        .meal__price h5 {transform: translateX(50%);}
+        .check {transform: rotate(360deg)}
+        .meal__description {
+            width: 70%;
+        }
+    }
+}
+
+.n1 {animation: gradual_appearance 0.5s 0.2s both;}
+.n2 {animation: gradual_appearance 0.5s 0.3s both;}
+.n3 {animation: gradual_appearance 0.5s 0.4s both;}
+.n4 {animation: gradual_appearance 0.5s 0.5s both;}
+
+
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 70px;
+    @media screen and (min-width: 768px) {margin-top: 0; margin-bottom:20px;}
+}
+
+.btn-primary {
+    @include button;
+    @include boxshadow;
+    padding: 15px 25px 15px 25px;
+    &:hover {@include button_hover}
+}
+
+.btn-secondary {
+    @include button;
+    @include boxshadow;
+    padding: 15px 50px 15px 50px;
+    &:hover {@include button_hover}
+}
